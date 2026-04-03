@@ -82,6 +82,23 @@ a {
   background: rgba(13, 135, 87, 0.28);
 }
 
+.spotlight {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  --mx: 56%;
+  --my: 22%;
+  background:
+    radial-gradient(
+      620px circle at var(--mx) var(--my),
+      rgba(47, 255, 171, 0.2) 0%,
+      rgba(23, 132, 84, 0.14) 28%,
+      transparent 72%
+    );
+  mix-blend-mode: screen;
+}
+
 .header,
 .hero,
 .kpi,
@@ -103,39 +120,16 @@ a {
 
 .logo {
   text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
+  display: inline-block;
 }
 
-.logo-mark {
-  width: 44px;
-  height: 44px;
-  border-radius: 14px;
-  display: grid;
-  place-items: center;
-  font-family: "Syne", sans-serif;
-  font-size: 1.35rem;
-  font-weight: 800;
-  color: #032215;
-  background: linear-gradient(135deg, #9effd1 0%, var(--emerald) 100%);
-}
-
-.logo-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-}
-
-.logo-text strong {
-  letter-spacing: 0.04em;
-  font-size: 0.95rem;
-  text-transform: uppercase;
-}
-
-.logo-text span {
-  color: var(--muted);
-  font-size: 0.8rem;
+.logo-img {
+  display: block;
+  height: 48px;
+  max-width: min(34vw, 220px);
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 26px rgba(39, 223, 146, 0.26));
 }
 
 .nav {
@@ -588,6 +582,10 @@ h1 {
 
   .nav {
     display: none;
+  }
+
+  .logo-img {
+    height: 42px;
   }
 
   h1 {
