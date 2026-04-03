@@ -1,24 +1,21 @@
-const revealNodes = document.querySelectorAll(".reveal");
+const revealElements = document.querySelectorAll(".reveal");
 
 const revealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
-      entry.target.classList.add("is-visible");
+      entry.target.classList.add("visible");
       revealObserver.unobserve(entry.target);
     });
   },
-  {
-    threshold: 0.18,
-    rootMargin: "0px 0px -40px 0px",
-  }
+  { threshold: 0.2, rootMargin: "0px 0px -30px 0px" }
 );
 
-revealNodes.forEach((node) => revealObserver.observe(node));
+revealElements.forEach((node) => revealObserver.observe(node));
 
-const animatedValues = document.querySelectorAll("[data-count]");
+const counters = document.querySelectorAll("[data-count]");
 
-const numberObserver = new IntersectionObserver(
+const counterObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
@@ -27,33 +24,26 @@ const numberObserver = new IntersectionObserver(
       const target = Number(element.dataset.count || 0);
       const prefix = element.dataset.prefix || "";
       const suffix = element.dataset.suffix || "";
-      const duration = 1400;
-      const startTime = performance.now();
+      const duration = 1100;
+      const startedAt = performance.now();
 
-      const render = (now) => {
-        const progress = Math.min((now - startTime) / duration, 1);
+      const tick = (now) => {
+        const progress = Math.min((now - startedAt) / duration, 1);
         const eased = 1 - Math.pow(1 - progress, 3);
         const value = Math.round(target * eased);
         element.textContent = `${prefix}${value.toLocaleString("en-US")}${suffix}`;
 
-        if (progress < 1) {
-          requestAnimationFrame(render);
-        }
+        if (progress < 1) requestAnimationFrame(tick);
       };
 
-      requestAnimationFrame(render);
-      numberObserver.unobserve(element);
+      requestAnimationFrame(tick);
+      counterObserver.unobserve(element);
     });
   },
-  {
-    threshold: 0.45,
-  }
+  { threshold: 0.35 }
 );
 
-animatedValues.forEach((node) => numberObserver.observe(node));
+counters.forEach((node) => counterObserver.observe(node));
 
 const yearNode = document.getElementById("year");
-
-if (yearNode) {
-  yearNode.textContent = new Date().getFullYear();
-}
+if (yearNode) yearNode.textContent = String(new Date().getFullYear());
