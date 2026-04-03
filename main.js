@@ -6,44 +6,16 @@ const supportsObserver = "IntersectionObserver" in window;
 const spotlight = document.querySelector(".spotlight");
 
 if (spotlight) {
-  let currentX = window.innerWidth * 0.56;
-  let currentY = window.innerHeight * 0.22;
+  let currentX = window.innerWidth * 0.5;
+  let currentY = window.innerHeight * 0.24;
   let targetX = currentX;
   let targetY = currentY;
-  let lastMoveAt = performance.now();
-
-  const setTarget = (x, y) => {
-    targetX = x;
-    targetY = y;
-    lastMoveAt = performance.now();
-  };
-
-  window.addEventListener(
-    "mousemove",
-    (event) => {
-      setTarget(event.clientX, event.clientY);
-    },
-    { passive: true }
-  );
-
-  window.addEventListener(
-    "touchmove",
-    (event) => {
-      const touch = event.touches[0];
-      if (!touch) return;
-      setTarget(touch.clientX, touch.clientY);
-    },
-    { passive: true }
-  );
 
   const animateSpotlight = (now) => {
-    const idle = now - lastMoveAt > 1100;
-
-    if (idle) {
-      const phase = now * 0.00018;
-      targetX = (0.5 + Math.sin(phase) * 0.28) * window.innerWidth;
-      targetY = (0.28 + Math.cos(phase * 0.9) * 0.12) * window.innerHeight;
-    }
+    const phase = now * 0.00014;
+    const phase2 = now * 0.00009;
+    targetX = (0.5 + Math.sin(phase) * 0.26 + Math.sin(phase2) * 0.06) * window.innerWidth;
+    targetY = (0.26 + Math.cos(phase * 0.92) * 0.12 + Math.cos(phase2 * 1.1) * 0.04) * window.innerHeight;
 
     currentX += (targetX - currentX) * 0.08;
     currentY += (targetY - currentY) * 0.08;
