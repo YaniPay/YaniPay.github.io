@@ -25,6 +25,8 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--emerald-strong) rgba(7, 22, 17, 0.9);
 }
 
 html,
@@ -42,6 +44,25 @@ body {
     linear-gradient(180deg, var(--bg-1) 0%, var(--bg-0) 100%);
   color: var(--text);
   font-family: "Manrope", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(7, 22, 17, 0.92);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(54, 255, 172, 0.92), rgba(23, 179, 114, 0.9));
+  border-radius: 999px;
+  border: 2px solid rgba(7, 22, 17, 0.92);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(120, 255, 205, 0.98), rgba(33, 202, 133, 0.95));
 }
 
 a {
@@ -284,6 +305,7 @@ h1 {
     var(--surface-1);
   box-shadow: var(--shadow);
   padding: 20px;
+  animation: mockup-float 8s ease-in-out infinite;
 }
 
 .mockup header,
@@ -320,17 +342,42 @@ h1 {
   content: "";
   position: absolute;
   border-radius: 50%;
-  border: 1px solid rgba(118, 255, 204, 0.2);
+  border: 1px solid rgba(118, 255, 204, 0.14);
 }
 
 .mockup-ring::before {
   width: 260px;
   height: 260px;
+  border-top-color: rgba(145, 255, 215, 0.84);
+  border-right-color: rgba(62, 255, 172, 0.54);
+  animation: orbit-spin 11s linear infinite;
 }
 
 .mockup-ring::after {
   width: 190px;
   height: 190px;
+  border-left-color: rgba(145, 255, 215, 0.8);
+  border-bottom-color: rgba(62, 255, 172, 0.52);
+  animation: orbit-spin-reverse 9s linear infinite;
+}
+
+.ring-pulse {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(132, 255, 212, 0.4);
+  pointer-events: none;
+}
+
+.ring-pulse-a {
+  width: 130px;
+  height: 130px;
+  animation: pulse-ring 2.6s ease-out infinite;
+}
+
+.ring-pulse-b {
+  width: 168px;
+  height: 168px;
+  animation: pulse-ring 2.6s ease-out 1.2s infinite;
 }
 
 .ring-center {
@@ -344,6 +391,7 @@ h1 {
   text-align: center;
   padding: 14px;
   z-index: 1;
+  animation: center-breathe 4s ease-in-out infinite;
 }
 
 .ring-center small {
@@ -362,7 +410,8 @@ h1 {
   color: #a5ffd5;
   font-size: 0.82rem;
   padding: 8px 12px;
-  animation: drift 7s ease-in-out infinite;
+  box-shadow: 0 8px 24px rgba(39, 223, 146, 0.16);
+  animation: drift 7s ease-in-out infinite, chip-glow 2.8s ease-in-out infinite;
 }
 
 .chip-a {
@@ -382,11 +431,39 @@ h1 {
   animation-delay: -4s;
 }
 
+.spark {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(182, 255, 227, 0.95);
+  box-shadow: 0 0 14px rgba(104, 255, 194, 0.78);
+  pointer-events: none;
+  animation: spark-fade 2.2s ease-in-out infinite;
+}
+
+.spark-a {
+  top: 52px;
+  left: 34px;
+}
+
+.spark-b {
+  top: 90px;
+  right: 44px;
+  animation-delay: -0.8s;
+}
+
+.spark-c {
+  bottom: 56px;
+  left: 62px;
+  animation-delay: -1.5s;
+}
+
 .kpi {
   padding-top: 16px;
   display: grid;
   gap: 14px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .kpi-card {
@@ -417,6 +494,33 @@ h1 {
   line-height: 1.65;
 }
 
+.kpi-details {
+  width: var(--content);
+  margin: 14px auto 0;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.detail-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: rgba(8, 28, 22, 0.68);
+  padding: 18px;
+}
+
+.detail-card h3 {
+  font-size: 1.2rem;
+}
+
+.detail-card p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  line-height: 1.68;
+}
+
 .section {
   padding: 86px 0 0;
 }
@@ -432,6 +536,14 @@ h1 {
   max-width: 22ch;
   font-size: clamp(2rem, 5vw, 3.8rem);
   line-height: 0.96;
+}
+
+.section-lead {
+  grid-column: 2 / 3;
+  margin: 8px 0 0;
+  color: var(--muted);
+  line-height: 1.72;
+  max-width: 70ch;
 }
 
 .product-grid {
@@ -463,6 +575,13 @@ h1 {
 .product-card p {
   margin-top: 10px;
   line-height: 1.7;
+}
+
+.product-note {
+  margin-top: 10px;
+  padding-left: 12px;
+  border-left: 2px solid rgba(118, 255, 204, 0.32);
+  color: #b9e8d9;
 }
 
 .product-card ul {
@@ -509,6 +628,30 @@ h1 {
 .flow-step p {
   margin-top: 8px;
   line-height: 1.65;
+}
+
+.flow-notes {
+  margin-top: 14px;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.flow-note {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: rgba(9, 33, 26, 0.66);
+  padding: 18px;
+}
+
+.flow-note h3 {
+  font-size: 1.28rem;
+}
+
+.flow-note p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  line-height: 1.66;
 }
 
 .cta-box {
@@ -574,6 +717,80 @@ h1 {
   }
 }
 
+@keyframes chip-glow {
+  0%,
+  100% {
+    box-shadow: 0 8px 24px rgba(39, 223, 146, 0.12);
+  }
+  50% {
+    box-shadow: 0 10px 30px rgba(114, 255, 204, 0.26);
+  }
+}
+
+@keyframes orbit-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-spin-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  30% {
+    opacity: 0.65;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.28);
+  }
+}
+
+@keyframes center-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+@keyframes spark-fade {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes mockup-float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
 @media (max-width: 1100px) {
   .header {
     flex-wrap: wrap;
@@ -589,12 +806,20 @@ h1 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .kpi-details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .flow-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .section-head {
     grid-template-columns: 1fr;
+  }
+
+  .section-lead {
+    grid-column: auto;
   }
 }
 
@@ -620,8 +845,10 @@ h1 {
   }
 
   .kpi,
+  .kpi-details,
   .product-grid,
-  .flow-grid {
+  .flow-grid,
+  .flow-notes {
     grid-template-columns: 1fr;
   }
 
