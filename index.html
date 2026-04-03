@@ -3,54 +3,328 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>YaniPay</title>
+    <title>YaniPay | AI-powered and crypto-friendly</title>
     <meta
       name="description"
-      content="YaniPay GitHub Pages starter for public web content and experiments."
+      content="YaniPay unifies payments, loyalty, digital identity, and white-label financial infrastructure in one AI-powered ecosystem."
+    />
+    <meta property="og:title" content="YaniPay | You pay. You win." />
+    <meta
+      property="og:description"
+      content="An emerald-toned fintech landing page for YaniPay across payments, loyalty, identity, and infrastructure."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yanipay.github.io/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./main.js"></script>
   </head>
   <body>
-    <main class="page">
-      <section class="hero">
-        <p class="eyebrow">YaniPay</p>
-        <h1>GitHub Pages repository initialized.</h1>
-        <p class="lead">
-          This site is ready for development and deployment from the default branch.
-        </p>
+    <div class="ambient ambient-left" aria-hidden="true"></div>
+    <div class="ambient ambient-right" aria-hidden="true"></div>
+    <div class="gridlines" aria-hidden="true"></div>
 
-        <div class="actions">
-          <a class="button button-primary" href="https://github.com/YaniPay" target="_blank" rel="noreferrer">
-            View GitHub Organization
-          </a>
-          <a class="button button-secondary" href="https://yanipay.com" target="_blank" rel="noreferrer">
-            Visit yanipay.com
-          </a>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="YaniPay home">
+        <span class="brand-mark">Y</span>
+        <span class="brand-copy">
+          <strong>YaniPay</strong>
+          <span>You pay. You win.</span>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#platform">Platform</a>
+        <a href="#engines">Engines</a>
+        <a href="#infrastructure">Infrastructure</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="header-cta" href="https://yanipay.com/contact/" target="_blank" rel="noreferrer">
+        Talk to YaniPay
+      </a>
+    </header>
+
+    <main id="top">
+      <section class="hero section">
+        <div class="hero-copy reveal">
+          <p class="kicker">AI-powered and crypto-friendly</p>
+          <h1>
+            Payments, loyalty, and digital identity
+            <span>designed as one living system.</span>
+          </h1>
+          <p class="hero-text">
+            YaniPay brings together everyday payments, instant cashback,
+            loyalty mechanics, digital identity, and white-label financial
+            infrastructure in a single ecosystem built for both individuals and
+            businesses.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://yanipay.com/" target="_blank" rel="noreferrer">
+              Visit Official Site
+            </a>
+            <a class="button button-secondary" href="https://github.com/YaniPay" target="_blank" rel="noreferrer">
+              Explore GitHub
+            </a>
+          </div>
+
+          <ul class="signal-strip" aria-label="Platform highlights">
+            <li>Instant cashback</li>
+            <li>NFC-ready payments</li>
+            <li>Y.A.N.I. intelligence</li>
+            <li>White-label finance</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual reveal reveal-delay-2" aria-hidden="true">
+          <div class="hero-panel main-panel">
+            <div class="panel-heading">
+              <span class="panel-label">Unified flow</span>
+              <span class="panel-status">Active</span>
+            </div>
+
+            <div class="payment-orbit">
+              <div class="orbit-center">
+                <span>YaniPay</span>
+                <strong>Super-app</strong>
+              </div>
+              <div class="orbit-chip chip-a">Pay</div>
+              <div class="orbit-chip chip-b">Earn</div>
+              <div class="orbit-chip chip-c">Verify</div>
+            </div>
+
+            <div class="hero-metrics">
+              <article>
+                <span>Card + Wallet</span>
+                <strong>One payment layer</strong>
+              </article>
+              <article>
+                <span>Loyalty engine</span>
+                <strong>Rewards at transaction time</strong>
+              </article>
+            </div>
+          </div>
+
+          <div class="hero-panel side-panel side-panel-top">
+            <span class="panel-mini-label">YANI loop</span>
+            <strong>Spend. Earn. Reuse instantly.</strong>
+          </div>
+
+          <div class="hero-panel side-panel side-panel-bottom">
+            <span class="panel-mini-label">Identity layer</span>
+            <strong>Trust, security, and onboarding built in.</strong>
+          </div>
         </div>
       </section>
 
-      <section class="card-grid">
-        <article class="card">
-          <h2>Repository</h2>
-          <p>
-            Public source for <code>https://yanipay.github.io</code>.
-          </p>
-        </article>
+      <section class="ticker" aria-label="YaniPay sectors">
+        <div class="ticker-track">
+          <span>Payments</span>
+          <span>Loyalty</span>
+          <span>Digital Identity</span>
+          <span>Banking Infrastructure</span>
+          <span>White-label Finance</span>
+          <span>Payments</span>
+          <span>Loyalty</span>
+          <span>Digital Identity</span>
+          <span>Banking Infrastructure</span>
+          <span>White-label Finance</span>
+        </div>
+      </section>
 
-        <article class="card">
-          <h2>Hosting</h2>
-          <p>
-            Designed for static delivery through GitHub Pages without extra build tooling.
-          </p>
-        </article>
+      <section class="stats section" id="platform">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Platform stance</p>
+          <h2>A fintech stack that behaves like a product, not a patchwork.</h2>
+        </div>
 
-        <article class="card">
-          <h2>Next Step</h2>
-          <p>
-            Replace this starter with the real landing page, docs, or brand experience.
-          </p>
-        </article>
+        <div class="stats-grid">
+          <article class="stat-card reveal">
+            <span class="stat-label">Performance</span>
+            <strong class="stat-value" data-count="50000" data-suffix="+">0</strong>
+            <p>Designed around high-throughput transaction experiences and fast user feedback loops.</p>
+          </article>
+
+          <article class="stat-card reveal reveal-delay-1">
+            <span class="stat-label">Reward motion</span>
+            <strong class="stat-value" data-count="1" data-prefix="+">0</strong>
+            <p>Cashback and loyalty logic can be attached directly to payment behavior.</p>
+          </article>
+
+          <article class="stat-card reveal reveal-delay-2">
+            <span class="stat-label">Audience model</span>
+            <strong class="stat-value">B2C + B2B</strong>
+            <p>Built for everyday users, merchants, and partners inside the same platform logic.</p>
+          </article>
+
+          <article class="stat-card reveal reveal-delay-3">
+            <span class="stat-label">Operating base</span>
+            <strong class="stat-value">La Reunion</strong>
+            <p>Founder-led ambition with international product scope and infrastructure thinking.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="engines section" id="engines">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Three engines</p>
+          <h2>Each capability strengthens the others.</h2>
+        </div>
+
+        <div class="engine-grid">
+          <article class="engine-card reveal">
+            <span class="engine-index">01</span>
+            <h3>Payments</h3>
+            <p>
+              Contactless card and wallet experiences shaped for everyday use,
+              mobile convenience, and friction-light checkout moments.
+            </p>
+            <ul>
+              <li>NFC-ready payment flows</li>
+              <li>Card, app, and wearable usage paths</li>
+              <li>Consumer-grade transaction clarity</li>
+            </ul>
+          </article>
+
+          <article class="engine-card reveal reveal-delay-1">
+            <span class="engine-index">02</span>
+            <h3>Loyalty</h3>
+            <p>
+              Reward systems are not bolted on after the fact. They are part of
+              the transaction architecture from the start.
+            </p>
+            <ul>
+              <li>Instant cashback loops</li>
+              <li>Points and tokenized reward mechanics</li>
+              <li>Merchant-friendly retention design</li>
+            </ul>
+          </article>
+
+          <article class="engine-card reveal reveal-delay-2">
+            <span class="engine-index">03</span>
+            <h3>Identity</h3>
+            <p>
+              Digital identity, onboarding trust, and security signals make the
+              platform more durable as it grows into serious financial use cases.
+            </p>
+            <ul>
+              <li>Digital identity layer</li>
+              <li>Security-oriented product thinking</li>
+              <li>AI-assisted user guidance</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="journey section">
+        <div class="journey-shell reveal">
+          <div class="journey-copy">
+            <p class="eyebrow">Transaction loop</p>
+            <h2>The value cycle is simple by design.</h2>
+            <p>
+              YaniPay compresses payment, reward, and reuse into one continuous
+              customer journey so the experience feels immediate, visible, and
+              commercially useful.
+            </p>
+          </div>
+
+          <div class="journey-steps">
+            <article class="step">
+              <span>01</span>
+              <h3>Pay</h3>
+              <p>Use card, app, or wearable to complete the transaction cleanly.</p>
+            </article>
+            <article class="step">
+              <span>02</span>
+              <h3>Earn</h3>
+              <p>Rewards and cashback appear as part of the payment event, not hours later.</p>
+            </article>
+            <article class="step">
+              <span>03</span>
+              <h3>Reuse</h3>
+              <p>Spend, convert, or store value again inside the same ecosystem.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="infrastructure section" id="infrastructure">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Infrastructure</p>
+          <h2>Beyond the app: a foundation for partners, operators, and brands.</h2>
+        </div>
+
+        <div class="infrastructure-layout">
+          <article class="infra-feature reveal">
+            <h3>White-label finance</h3>
+            <p>
+              Launch branded financial experiences with configurable flows,
+              embedded loyalty, and a product layer designed to feel premium.
+            </p>
+          </article>
+
+          <article class="infra-feature reveal reveal-delay-1">
+            <h3>Banking as a service mindset</h3>
+            <p>
+              Accounts, payment capabilities, and operational rails can be
+              exposed through product-grade interfaces for downstream partners.
+            </p>
+          </article>
+
+          <article class="infra-feature reveal reveal-delay-2">
+            <h3>AI guidance inside the stack</h3>
+            <p>
+              Y.A.N.I. points toward a system where financial interactions are
+              not only executed, but interpreted and guided with context.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="quote section">
+        <div class="quote-shell reveal">
+          <p class="eyebrow">Vision</p>
+          <blockquote>
+            Build a universal financial experience where individuals and
+            professionals share the same intelligent payment ecosystem.
+          </blockquote>
+        </div>
       </section>
     </main>
+
+    <footer class="site-footer section" id="contact">
+      <div class="footer-grid">
+        <div class="footer-brand reveal">
+          <p class="eyebrow">YaniPay</p>
+          <h2>Built for a more connected financial experience.</h2>
+        </div>
+
+        <div class="footer-meta reveal reveal-delay-1">
+          <div>
+            <span>Official website</span>
+            <a href="https://yanipay.com/" target="_blank" rel="noreferrer">yanipay.com</a>
+          </div>
+          <div>
+            <span>Contact</span>
+            <a href="mailto:contact@yanipay.com">contact@yanipay.com</a>
+          </div>
+          <div>
+            <span>Location</span>
+            <p>La Reunion, France</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>YaniPay SAS</p>
+        <p><span id="year"></span> YaniPay. All rights reserved.</p>
+      </div>
+    </footer>
   </body>
 </html>
